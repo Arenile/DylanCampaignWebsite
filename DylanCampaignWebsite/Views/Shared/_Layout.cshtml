@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Seven Deadly Schmucks</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".dropdown, .btn-group").hover(function () {
+                var dropdownMenu = $(this).children(".dropdown-menu");
+                if (dropdownMenu.is(":visible")) {
+                    dropdownMenu.parent().toggleClass("open");
+                }
+            });
+        });
+    </script>
+    <style>
+.bs-example{
+	margin: 20px;
+}
+   @@media screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+		display: block;
+	}
+	.dropdown-menu{
+		margin-top: 0;
+	}
+	.dropdown-toggle{
+		margin-bottom: 2px;
+	}
+	.navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+		margin-bottom: 0;
+	}
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Seven Deadly Schmucks</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="TheMap">The Map</a>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="nav-link dropdown-toggle text-light" asp-area=""
+                               asp-controller="Home" asp-action="PlayerCharacters">Characters</a>
+                            <ul class="dropdown-menu bg-dark" style="z-index: 10 !important">
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="PlayerCharacters">Player Characters</a></li>
+                                <li class="divider"></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="NPCharacters">Other Characters</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle text-light nav-link" asp-area=""
+                               asp-controller="Home" asp-action="PlotSynopsis">The Story</a>
+                            <ul class="dropdown-menu bg-dark">
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="PlotSynopsis">Plot Synopsis</a></li>
+                                <li class="divider"></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="ThomasNotes">Thomas's Notes</a></li>
+                                <li class="divider"></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="WillNotes">Will's Notes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
