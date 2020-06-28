@@ -174,3 +174,32 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #111111;
 }
+
+.svg-map-background {
+    
+    background-image: url("../images/dylan-campaign-map.svg");
+    /*filter: blur(8px);
+    -webkit-filter: blur(8px);*/
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: unset;
+    background-position: center;
+    z-index: 1;
+    overflow: auto;
+}
+
+.campaign-map {
+    position: absolute;
+    background-position: center;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url("../images/dylan-campaign-map.svg");
+    background-repeat: no-repeat;
+    background-size: unset;
+
+    transform: translate(5%, 10%);
+    z-index: 1;
+    overflow: visible;
+}
