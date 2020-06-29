@@ -3,6 +3,14 @@
     ViewData["Title"] = "PlayerCharacters";
 }
 
-<div>
-    <p></p>
+@model DylanCampaignWebsite.Models.ICharacterRepository
+
+<div class="second-parchment-background"></div>
+
+
+<div class="character-card grow" style="top: 100px; left: 50px;">
+    <h1 class="text-center">@Model.GetCharacter(2).CharacterName
+    </h1>
+    <h2 style="text-align:left;">@Model.GetCharacter(2).CharacterRace
+    <span style="float:right;">@Model.GetCharacter(2).CharacterClass @Model.GetCharacter(2).CharacterLevel</span></h2>
 </div>

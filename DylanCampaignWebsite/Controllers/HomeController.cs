@@ -12,15 +12,18 @@ namespace DylanCampaignWebsite.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICharacterRepository _characterRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICharacterRepository characterRepository)
         {
             _logger = logger;
+            this._characterRepository = characterRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model = _characterRepository.GetCharacter(2);
+            return View(model);
         }
 
         public IActionResult TheMap()
@@ -30,7 +33,8 @@ namespace DylanCampaignWebsite.Controllers
 
         public IActionResult PlayerCharacters()
         {
-            return View();
+            var model = _characterRepository;
+            return View(model);
         }
 
         public IActionResult NPCharacters()

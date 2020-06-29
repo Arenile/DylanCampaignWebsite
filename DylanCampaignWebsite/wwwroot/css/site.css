@@ -203,3 +203,59 @@ body {
     z-index: 1;
     overflow: visible;
 }
+
+.character-card {
+    position: relative;
+    display: block;
+    padding: 10px 10px 10px;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: unset;
+    border: 2px solid #232323;
+    border-radius: 25px; 
+    /*top: 100px;
+    left: 50px;*/
+    width: 350px;
+    height: 300px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(0, 0, 0, .7);
+}
+
+.second-parchment-background {
+    position: fixed;
+    background-image: url("../images/second-parchment-paper-texture.jpg");
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.wizard-desk-background {
+    position: fixed;
+    background-image: url("../images/wizard-desk-background.jpg");
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}

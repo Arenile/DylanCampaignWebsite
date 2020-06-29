@@ -8,5 +8,9 @@ namespace DylanCampaignWebsite.Models
     public interface ICharacterRepository
     {
         Character GetCharacter(int Id);
+        IEnumerable<Character> GetAllCharacters();
+        Character Add(Character character);
+        Character Update(Character characterChanges);
+        Character Delete(int id);
     }
 }
